@@ -47,14 +47,44 @@
        77  RECORD-FOUND                        PIC X(01).
        77  CUSTOMER-NUMBER-FIELD               PIC X(05).
 
+      * CBL_CHECK_FILE_EXIST
+       01  FILE-INFO.
+           05  FILE-SIZE-IN-BYTES              PIC 9(18) COMP.
+           05  MOD-DD                          PIC 9(02) COMP.
+           05  MOD-MO                          PIC 9(02) COMP.
+           05  MOD-YYYY                        PIC 9(04) COMP.
+           05  MOD-HH                          PIC 9(02) COMP.
+           05  MOD-MM                          PIC 9(02) COMP.
+           05  MOD-SS                          PIC 9(02) COMP.
+           05  FILLER                          PIC 9(02) COMP.
+       77  INPUT-FILE                          PIC X(20).
+       77  RETURN-STATUS                       PIC 9(03).
+
        PROCEDURE DIVISION.
        PROGRAM-BEGIN.
+           PERFORM CHECK-FILE-EXIST.
            PERFORM OPENING-PROCEDURE.
            PERFORM MAIN-PROCESS.
            PERFORM CLOSING-PROCEDURE.
 
        PROGRAM-DONE.
            STOP RUN.
+
+       CHECK-FILE-EXIST.
+           MOVE "customer.dat" TO INPUT-FILE.
+           MOVE ZEROES TO RETURN-CODE.
+           CALL "CBL_CHECK_FILE_EXIST"
+              USING INPUT-FILE
+                    FILE-INFO
+              RETURNING RETURN-STATUS.
+      * File not exists
+           IF RETURN-STATUS NOT = 0
+              PERFORM CREATE-DATA-FILE
+           END-IF.
+
+       CREATE-DATA-FILE.
+           OPEN OUTPUT CUSTOMER-FILE.
+           CLOSE CUSTOMER-FILE.
 
        OPENING-PROCEDURE.
            OPEN I-O CUSTOMER-FILE.
