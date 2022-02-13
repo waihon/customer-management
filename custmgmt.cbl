@@ -369,25 +369,25 @@
            DISPLAY "   Customer Number: " CUSTOMER-NUMBER.
 
        DISPLAY-CUSTOMER-NAME.
-           DISPLAY "1. Customer Name: " CUSTOMER-NAME.
+           DISPLAY "1. Customer Name:   " CUSTOMER-NAME.
 
        DISPLAY-CUSTOMER-ADDRESS-1.
-           DISPLAY "2. Address 1: " CUSTOMER-ADDRESS-1.
+           DISPLAY "2. Address 1:       " CUSTOMER-ADDRESS-1.
 
        DISPLAY-CUSTOMER-ADDRESS-2.
-           DISPLAY "3. Address 2: " CUSTOMER-ADDRESS-2.
+           DISPLAY "3. Address 2:       " CUSTOMER-ADDRESS-2.
 
        DISPLAY-CUSTOMER-CITY.
-           DISPLAY "4. City: " CUSTOMER-CITY.
+           DISPLAY "4. City:            " CUSTOMER-CITY.
 
        DISPLAY-CUSTOMER-STATE.
-           DISPLAY "5. State: " CUSTOMER-STATE.
+           DISPLAY "5. State:           " CUSTOMER-STATE.
 
        DISPLAY-CUSTOMER-POSTCODE.
-           DISPLAY "6. Postcode: " CUSTOMER-POSTCODE.
+           DISPLAY "6. Postcode:        " CUSTOMER-POSTCODE.
 
        DISPLAY-CUSTOMER-PHONE.
-           DISPLAY "7. Phone Number: " CUSTOMER-PHONE.
+           DISPLAY "7. Phone Number:    " CUSTOMER-PHONE.
 
       ****************************************************
       * File I-O routines
