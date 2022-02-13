@@ -268,7 +268,7 @@
        ENTER-CUSTOMER-NUMBER.
            DISPLAY " ".
            DISPLAY "Enter Customer Number of the Customer".
-           DISPLAY "to " THE-MODE "1-99999."
+           DISPLAY "to " THE-MODE " (1-99999)."
            DISPLAY "Enter 0 to stop entry."
            DISPLAY "Customer Number: " WITH NO ADVANCING.
            ACCEPT CUSTOMER-NUMBER-FIELD.
