@@ -324,31 +324,31 @@
            END-IF.
 
        ENTER-CUSTOMER-NAME.
-           DISPLAY "Customer Name: " WITH NO ADVANCING.
+           DISPLAY "Customer Name:   " WITH NO ADVANCING.
            ACCEPT CUSTOMER-NAME.
 
        ENTER-CUSTOMER-ADDRESS-1.
-           DISPLAY "Address 1: " WITH NO ADVANCING.
+           DISPLAY "Address 1:       " WITH NO ADVANCING.
            ACCEPT CUSTOMER-ADDRESS-1.
 
        ENTER-CUSTOMER-ADDRESS-2.
-           DISPLAY "Address 2: " WITH NO ADVANCING.
+           DISPLAY "Address 2:       " WITH NO ADVANCING.
            ACCEPT CUSTOMER-ADDRESS-2.
 
        ENTER-CUSTOMER-CITY.
-           DISPLAY "City: " WITH NO ADVANCING.
+           DISPLAY "City:            " WITH NO ADVANCING.
            ACCEPT CUSTOMER-CITY.
 
        ENTER-CUSTOMER-STATE.
-           DISPLAY "State: " WITH NO ADVANCING.
+           DISPLAY "State:           " WITH NO ADVANCING.
            ACCEPT CUSTOMER-STATE.
 
        ENTER-CUSTOMER-POSTCODE.
-           DISPLAY "Postcode: " WITH NO ADVANCING.
+           DISPLAY "Postcode:        " WITH NO ADVANCING.
            ACCEPT CUSTOMER-POSTCODE.
 
        ENTER-CUSTOMER-PHONE.
-           DISPLAY "Phone Number: " WITH NO ADVANCING.
+           DISPLAY "Phone Number:    " WITH NO ADVANCING.
            ACCEPT CUSTOMER-PHONE.
 
       ****************************************************
