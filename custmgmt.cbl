@@ -88,7 +88,7 @@
 
        OPENING-PROCEDURE.
            OPEN I-O CUSTOMER-FILE.
-           
+
        CLOSING-PROCEDURE.
            CLOSE CUSTOMER-FILE.
 
@@ -152,7 +152,7 @@
            END-IF.
 
       ****************************************************
-      * Add 
+      * Add
       ****************************************************
        ADD-MODE.
            MOVE "add" TO THE-MODE.
@@ -196,7 +196,7 @@
            MOVE "change" TO THE-MODE.
            PERFORM GET-CUSTOMER-RECORD.
            PERFORM CHANGE-RECORDS
-              UNTIL CUSTOMER-NUMBER = ZEROES. 
+              UNTIL CUSTOMER-NUMBER = ZEROES.
 
        CHANGE-RECORDS.
            PERFORM GET-FIELD-TO-CHANGE.
@@ -225,7 +225,7 @@
            EVALUATE WHICH-FIELD
               WHEN 1
                  PERFORM ENTER-CUSTOMER-NAME
-              WHEN 2   
+              WHEN 2
                  PERFORM ENTER-CUSTOMER-ADDRESS-1
               WHEN 3
                  PERFORM ENTER-CUSTOMER-ADDRESS-2
@@ -272,7 +272,7 @@
               WHEN "n"
                  MOVE "N" TO OK-TO-DELETE
              WHEN OTHER
-                 DISPLAY "You must enter Y or N" 
+                 DISPLAY "You must enter Y or N"
            END-EVALUATE.
 
       ****************************************************
@@ -370,22 +370,22 @@
 
        DISPLAY-CUSTOMER-NAME.
            DISPLAY "1. Customer Name: " CUSTOMER-NAME.
-           
+
        DISPLAY-CUSTOMER-ADDRESS-1.
            DISPLAY "2. Address 1: " CUSTOMER-ADDRESS-1.
-           
+
        DISPLAY-CUSTOMER-ADDRESS-2.
            DISPLAY "3. Address 2: " CUSTOMER-ADDRESS-2.
 
        DISPLAY-CUSTOMER-CITY.
            DISPLAY "4. City: " CUSTOMER-CITY.
-           
+
        DISPLAY-CUSTOMER-STATE.
            DISPLAY "5. State: " CUSTOMER-STATE.
-           
+
        DISPLAY-CUSTOMER-POSTCODE.
            DISPLAY "6. Postcode: " CUSTOMER-POSTCODE.
-           
+
        DISPLAY-CUSTOMER-PHONE.
            DISPLAY "7. Phone Number: " CUSTOMER-PHONE.
 
