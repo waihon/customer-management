@@ -125,7 +125,7 @@
       * Add 
       ****************************************************
        ADD-MODE.
-           MOVE "ADD" TO THE-MODE.
+           MOVE "add" TO THE-MODE.
            PERFORM GET-NEW-CUSTOMER-NUMBER.
            PERFORM ADD-RECORDS
               UNTIL CUSTOMER-NUMBER = ZEROES.
@@ -163,7 +163,7 @@
       * Change
       ****************************************************
        CHANGE-MODE.
-           MOVE "CHANGE" TO THE-MODE.
+           MOVE "change" TO THE-MODE.
            PERFORM GET-CUSTOMER-RECORD.
            PERFORM CHANGE-RECORDS
               UNTIL CUSTOMER-NUMBER = ZEROES. 
@@ -215,7 +215,7 @@
       * Delete
       ****************************************************
        DELETE-MODE.
-           MOVE "DELETE" TO THE-MODE.
+           MOVE "delete" TO THE-MODE.
            PERFORM GET-CUSTOMER-RECORD.
            PERFORM DELETE-RECORDS
               UNTIL CUSTOMER-NUMBER = ZEROES.
@@ -249,7 +249,7 @@
       * Inquire
       ****************************************************
        INQUIRE-MODE.
-           MOVE "DISPLAY" TO THE-MODE.
+           MOVE "display" TO THE-MODE.
            PERFORM GET-CUSTOMER-RECORD.
            PERFORM INQUIRE-RECORDS
               UNTIL CUSTOMER-NUMBER = ZEROES.
