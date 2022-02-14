@@ -119,7 +119,6 @@
            PERFORM SCROLL-LINE 8 TIMES.
 
        ACCEPT-MENU-PICK.
-      *    DISPLAY "Your choice (0-4)?".
            DISPLAY "Your choice (0-4)? " WITH NO ADVANCING.
            ACCEPT MENU-PICK.
 
@@ -208,13 +207,19 @@
            PERFORM ASK-WHICH-FIELD.
 
        ASK-WHICH-FIELD.
+           PERFORM ACCEPT-WHICH-FIELD.
+           PERFORM RETRY-WHICH-FIELD
+              UNTIL WHICH-FIELD <= 8.
+
+        ACCEPT-WHICH-FIELD.
            DISPLAY "Enter the number of the field.".
            DISPLAY "To change (1-8) or 0 to exit.".
            DISPLAY "Field number: " WITH NO ADVANCING.
            ACCEPT WHICH-FIELD.
-           IF WHICH-FIELD > 8
-              DISPLAY "Invalid entry"
-           END-IF.
+
+        RETRY-WHICH-FIELD.
+           DISPLAY "Invalid entry"
+           PERFORM ACCEPT-WHICH-FIELD.
 
        CHANGE-ONE-FIELD.
            PERFORM CHANGE-THIS-FIELD.
@@ -255,16 +260,19 @@
            PERFORM DISPLAY-ALL-FIELDS.
            MOVE "X" TO OK-TO-DELETE.
 
-           PERFORM ASK-TO-DELETE
-              UNTIL OK-TO-DELETE = "Y" OR "N".
-
+           PERFORM ASK-OK-TO-DELETE
            IF OK-TO-DELETE = "Y"
               PERFORM DELETE-CUSTOMER-RECORD
            END-IF.
 
            PERFORM GET-CUSTOMER-RECORD.
 
-       ASK-TO-DELETE.
+       ASK-OK-TO-DELETE.
+           PERFORM ACCEPT-OK-TO-DELETE.
+           PERFORM RETRY-OK-TO-DELETE
+              UNTIL OK-TO-DELETE = "Y" OR "N".
+
+       ACCEPT-OK-TO-DELETE.
            DISPLAY "Delete this record (Y/N)? " WITH NO ADVANCING.
            ACCEPT OK-TO-DELETE.
            EVALUATE OK-TO-DELETE
@@ -272,9 +280,11 @@
                  MOVE "Y" TO OK-TO-DELETE
               WHEN "n"
                  MOVE "N" TO OK-TO-DELETE
-             WHEN OTHER
-                 DISPLAY "You must enter Y or N"
            END-EVALUATE.
+
+       RETRY-OK-TO-DELETE.
+           DISPLAY "You must enter Y or N".
+           PERFORM ACCEPT-OK-TO-DELETE.
 
       ****************************************************
       * Inquire
@@ -303,7 +313,6 @@
            DISPLAY "Enter 0 to stop entry."
            DISPLAY "Customer Number: " WITH NO ADVANCING.
            ACCEPT CUSTOMER-NUMBER-FIELD.
-      * OR ACCEPT CUSTOMER-NUMBER-FIELD WITH CONVERSION.
            MOVE CUSTOMER-NUMBER-FIELD TO CUSTOMER-NUMBER.
 
        GET-CUSTOMER-RECORD.
