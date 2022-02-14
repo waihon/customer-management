@@ -187,6 +187,7 @@
            PERFORM ENTER-CUSTOMER-CITY.
            PERFORM ENTER-CUSTOMER-STATE.
            PERFORM ENTER-CUSTOMER-POSTCODE.
+           PERFORM ENTER-CUSTOMER-EMAIL.
            PERFORM ENTER-CUSTOMER-PHONE.
 
       ****************************************************
@@ -210,10 +211,10 @@
 
        ASK-WHICH-FIELD.
            DISPLAY "Enter the number of the field.".
-           DISPLAY "To change (1-7) or 0 to exit.".
+           DISPLAY "To change (1-8) or 0 to exit.".
            DISPLAY "Field number: " WITH NO ADVANCING.
            ACCEPT WHICH-FIELD.
-           IF WHICH-FIELD > 7
+           IF WHICH-FIELD > 8
               DISPLAY "Invalid entry"
            END-IF.
 
@@ -236,6 +237,8 @@
               WHEN 6
                  PERFORM ENTER-CUSTOMER-POSTCODE
               WHEN 7
+                 PERFORM ENTER-CUSTOMER-EMAIL
+              WHEN 8
                  PERFORM ENTER-CUSTOMER-PHONE
            END-EVALUATE.
 
@@ -347,6 +350,10 @@
            DISPLAY "Postcode:        " WITH NO ADVANCING.
            ACCEPT CUSTOMER-POSTCODE.
 
+       ENTER-CUSTOMER-EMAIL.
+           DISPLAY "Email:           " WITH NO ADVANCING.
+           ACCEPT CUSTOMER-EMAIL.
+
        ENTER-CUSTOMER-PHONE.
            DISPLAY "Phone Number:    " WITH NO ADVANCING.
            ACCEPT CUSTOMER-PHONE.
@@ -363,6 +370,7 @@
            PERFORM DISPLAY-CUSTOMER-CITY.
            PERFORM DISPLAY-CUSTOMER-STATE.
            PERFORM DISPLAY-CUSTOMER-POSTCODE.
+           PERFORM DISPLAY-CUSTOMER-EMAIL.
            PERFORM DISPLAY-CUSTOMER-PHONE.
 
        DISPLAY-CUSTOMER-NUMBER.
@@ -386,8 +394,11 @@
        DISPLAY-CUSTOMER-POSTCODE.
            DISPLAY "6. Postcode:        " CUSTOMER-POSTCODE.
 
+       DISPLAY-CUSTOMER-EMAIL.
+           DISPLAY "7. Email:           " CUSTOMER-EMAIL.
+
        DISPLAY-CUSTOMER-PHONE.
-           DISPLAY "7. Phone Number:    " CUSTOMER-PHONE.
+           DISPLAY "8. Phone Number:    " CUSTOMER-PHONE.
 
       ****************************************************
       * File I-O routines
