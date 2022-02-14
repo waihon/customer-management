@@ -138,18 +138,16 @@
            PERFORM GET-MENU-PICK.
 
        DO-THE-PICK.
-           IF MENU-PICK = 1
-              PERFORM ADD-MODE
-           ELSE
-           IF MENU-PICK = 2
-              PERFORM DELETE-MODE
-           ELSE
-           IF MENU-PICK = 3
-              PERFORM CHANGE-MODE
-           ELSE
-           IF MENU-PICK = 4
-              PERFORM INQUIRE-MODE
-           END-IF.
+           EVALUATE MENU-PICK
+              WHEN 1
+                 PERFORM ADD-MODE
+              WHEN 2
+                 PERFORM DELETE-MODE
+              WHEN 3
+                 PERFORM CHANGE-MODE
+              WHEN 4
+                 PERFORM INQUIRE-MODE
+           END-EVALUATE.
 
       ****************************************************
       * Add
