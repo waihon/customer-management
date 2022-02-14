@@ -102,8 +102,8 @@
       ****************************************************
        GET-MENU-PICK.
            PERFORM DISPLAY-THE-MENU.
-           PERFORM GET-THE-PICK.
-           PERFORM MENU-RETRY
+           PERFORM ACCEPT-MENU-PICK.
+           PERFORM RETRY-MENU-PICK
               UNTIL MENU-PICK-IS-VALID.
 
        DISPLAY-THE-MENU.
@@ -118,14 +118,14 @@
            DISPLAY "0. Exit".
            PERFORM SCROLL-LINE 8 TIMES.
 
-       GET-THE-PICK.
+       ACCEPT-MENU-PICK.
       *    DISPLAY "Your choice (0-4)?".
            DISPLAY "Your choice (0-4)? " WITH NO ADVANCING.
            ACCEPT MENU-PICK.
 
-       MENU-RETRY.
-           DISPLAY "Invalid selection - Please try.".
-           PERFORM GET-THE-PICK.
+       RETRY-MENU-PICK.
+           DISPLAY "Invalid selection - Please retry.".
+           PERFORM ACCEPT-MENU-PICK.
 
        CLEAR-SCREEN.
            PERFORM SCROLL-LINE 25 TIMES.
