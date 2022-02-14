@@ -47,6 +47,11 @@
        77  RECORD-FOUND                        PIC X(01).
        77  CUSTOMER-NUMBER-FIELD               PIC X(05).
 
+       77  UPPER-ALPHA                         PIC X(26) VALUE
+           "ABCDEFGHIJKLMNOPQRSTUVWXYZ".
+       77  LOWER-ALPHA                         PIC X(26) VALUE
+           "abcdefghijklmnopqrstuvwxyz".
+
       * CBL_CHECK_FILE_EXIST
        01  FILE-INFO.
            05  FILE-SIZE-IN-BYTES              PIC 9(18) COMP.
@@ -275,12 +280,10 @@
        ACCEPT-OK-TO-DELETE.
            DISPLAY "Delete this record (Y/N)? " WITH NO ADVANCING.
            ACCEPT OK-TO-DELETE.
-           EVALUATE OK-TO-DELETE
-              WHEN "y"
-                 MOVE "Y" TO OK-TO-DELETE
-              WHEN "n"
-                 MOVE "N" TO OK-TO-DELETE
-           END-EVALUATE.
+
+           INSPECT OK-TO-DELETE
+              CONVERTING LOWER-ALPHA
+              TO         UPPER-ALPHA.
 
        RETRY-OK-TO-DELETE.
            DISPLAY "You must enter Y or N".
