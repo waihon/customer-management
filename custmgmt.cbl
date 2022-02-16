@@ -103,7 +103,7 @@
               UNTIL MENU-PICK = 0.
 
       ****************************************************
-      * Menu
+      * Customer Management Main Menu
       ****************************************************
        GET-MENU-PICK.
            PERFORM DISPLAY-THE-MENU.
@@ -154,7 +154,7 @@
            END-EVALUATE.
 
       ****************************************************
-      * Add
+      * Add Customer Records routines
       ****************************************************
        ADD-MODE.
            MOVE "add" TO THE-MODE.
@@ -193,7 +193,7 @@
            PERFORM ENTER-CUSTOMER-PHONE.
 
       ****************************************************
-      * Change
+      * Change Customer Records routines
       ****************************************************
        CHANGE-MODE.
            MOVE "change" TO THE-MODE.
@@ -253,7 +253,7 @@
            PERFORM REWRITE-CUSTOMER-RECORD.
 
       ****************************************************
-      * Delete
+      * Delete Customer Records routines
       ****************************************************
        DELETE-MODE.
            MOVE "delete" TO THE-MODE.
@@ -290,7 +290,7 @@
            PERFORM ACCEPT-OK-TO-DELETE.
 
       ****************************************************
-      * Inquire
+      * Inquire Customer Records routines
       ****************************************************
        INQUIRE-MODE.
            MOVE "display" TO THE-MODE.
