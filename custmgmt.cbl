@@ -3,7 +3,7 @@
       ****************************************************
       * This program manages a customer database.
       * It allows:
-      * - Adition of new records
+      * - Addition of new records
       * - Deletion of existing records
       * - Maintenance of existing records
       * - Inquiry of existing records
