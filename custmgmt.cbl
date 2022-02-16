@@ -263,7 +263,6 @@
 
         DELETE-RECORDS.
            PERFORM DISPLAY-ALL-FIELDS.
-           MOVE "X" TO OK-TO-DELETE.
 
            PERFORM ASK-OK-TO-DELETE
            IF OK-TO-DELETE = "Y"
